@@ -24,16 +24,12 @@ mysqli_close($connect);
 ?>
 
 <body class="bg-dark text-white" background="./img/map-image.png">
-     <header>
-        <div class="container pt-5">
-            <h1><strong>Formul&aacute;rio de Registro para Formulario para <?php echo $_SESSION['usuario']; ?></strong></h1>
-        </div>
-    </header>    
+  <?php include("includes/navBar.php");?> 
     <section>
-        <div class="container p-3 mb-2 text-white rounded">
-            <!-- <div>
-                <h2>Formulario de Inscripcion</h2>
-            </div> -->
+        <div class="container pt-5 text-white rounded">
+            <div class="container pb-3">
+                <h2><strong>Formul&aacute;rio de Registro para Formulario para <?php echo $_SESSION['usuario']; ?></strong></h2>
+            </div>
                 <form name="form1" action="create/guarda.php" method="post" onsubmit="return ValidateAlta();">
                     <div class="form-row">
                         <div class="form-group col-md-6">

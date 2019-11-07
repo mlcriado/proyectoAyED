@@ -21,9 +21,11 @@ include("includes/headerForm.php");
 ?>
 <!-- ...usar resultados -->
 <body class="bg-dark text-white" background="./img/map-image.png">
-	<section>
-		<h2>Listado de datos de todos nuestros clientes</h2>
-		<table id="miTabla" class="container table table-striped table-dark">
+<?php include("includes/navBar.php");?> 
+
+<section>
+		<h2 class="p-3">Listado de datos de todos nuestros clientes</h2>
+		<table id="miTabla" class="container table table-striped table-dark p-3">
 			<thead>
 				<tr class="bg-success">
 					<th scope="col"> # </th>
@@ -32,6 +34,7 @@ include("includes/headerForm.php");
 					<th scope="col"> Email </th>
 					<th scope="col"> Sexo </th>
 					<th scope="col"> Ocupacion </th>
+					
 				</tr>
 			</thead>
 			<tfoot>
@@ -42,6 +45,7 @@ include("includes/headerForm.php");
 					<th scope="col"> Email </th>
 					<th scope="col"> Sexo </th>
 					<th scope="col"> Ocupacion </th>
+					
 				</tr>
 			</tfoot>
 			<tbody>
@@ -64,6 +68,7 @@ include("includes/headerForm.php");
 					"<td scope='row' >" . $row['email'] . "</td>",
 					"<td scope='row' >" . $sexo . "</td>",
 					"<td scope='row' >" . $row['ocupacion'] . "</td>",
+
 					"</tr>";
 				}
 				// Cerrar conección a DB

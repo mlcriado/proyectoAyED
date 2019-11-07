@@ -9,7 +9,7 @@ include("includes/headerForm.php");
 ?>
 
 <body class="bg-dark text-white" background="./img/map-image.png">
-    
+<?php include("includes/navBar.php");?>    
     <section>
 
         <div class="container rounded p-5">

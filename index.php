@@ -26,9 +26,6 @@ include("includes/header.php")?>
                   <a class="dropdown-item" href="./read.php">Listado de clientes</a>
                 </div>
               </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./login.html">Clientes</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#team">Nosotros</a>
           </li>

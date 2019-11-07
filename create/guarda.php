@@ -24,7 +24,7 @@ $dni = trim($_POST['dni']);
             $INTdni = intval($dni); 
             // $dni += $dni;
             
-            if (is_int($INTdni)&&($INTdni>=499999)&&($dni<=100000000)) {
+            if (is_int($INTdni)&&($INTdni>=4000000)&&($dni<=100000000)) {
             
                 echo $dni."</br>";
                 // $_SESSION['dni'] = $dni;
@@ -223,7 +223,7 @@ if ($esCorrecto == false) {
             }
             if ($guardoHobbie) {
                 echo "Se ha guardado el registro <br>",
-                "<input type='button' class='btn btn-danger' name='cancelar' onclick='window.location.href='../index.php'' value='Volver'>";
+                "<br><a href='../index.php'>Volver</a>";
             } else {
                 
                 

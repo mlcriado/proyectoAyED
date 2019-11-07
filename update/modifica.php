@@ -193,16 +193,19 @@ if ($esCorrecto == false) {
     
     //Ejecutamos la consulta
     $res_update=mysqli_query($connect,$update_sql)or die("Codigo de Error:" . mysqli_errno($connect) . "<br>" . mysqli_error($connect) . "SQL: " . $update_sql);
+    
     //mysqli_affected_rows() trae el número de filas afectadas por la última consulta INSERT, UPDATE, o DELETE asociada con el identificador_de_enlace dado
-   /*  if (mysqli_affected_rows($connect) > 0) {
+   if (mysqli_affected_rows($connect) > 0) {
 
         $guardoHobbie = true;
+        $deleteHobbies= "DELETE FROM personas_hobbies WHERE id_personas='$idPersona'";
+        $res_deleteHobbies =mysqli_query($connect,$deleteHobbies)or die("Codigo de Error:" . mysqli_errno($connect) . "<br>" . mysqli_error($connect) . "SQL: " . $deleteHobbies);
         foreach ($hobbies as $clave => $valor) {
 
-            $update_sqlH = "UPDATE personas_hobbies SET (id_personas='$idPersona' id_hobbies='$valor')";
-            $res_updateH=mysqli_query($connect,$update_sqlH)or die("Codigo de Error:" . mysqli_errno($connect) . "<br>" . mysqli_error($connect) . "SQL: " . $update_sqlH);
+            $insertHobbies = "INSERT INTO personas_hobbies (id_personas, id_hobbies) VALUES ($idPersona, $valor)";
+            $res_insertHobbies=mysqli_query($connect,$insertHobbies)or die("Codigo de Error:" . mysqli_errno($connect) . "<br>" . mysqli_error($connect) . "SQL: " . $insertHobbies);
 
-            if (!$res_updateH) {
+            if (!$res_insertHobbies) {
                 $guardoHobbie = false;
 
             }
@@ -210,7 +213,7 @@ if ($esCorrecto == false) {
 
         if ($guardoHobbie) {
             echo "Se ha guardado el registro <br>",
-            "<a href='./nuevo.php'>Volver</a>";
+            "<a href='../nuevo.php'>Volver</a>";
         } else {
 
             echo"<script language='javascript'>
@@ -219,6 +222,6 @@ if ($esCorrecto == false) {
                 </script>";
         
         }
-    } */
+    } 
 
 }  

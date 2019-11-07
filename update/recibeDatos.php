@@ -118,7 +118,9 @@ while ($tuplaH = mysqli_fetch_assoc($resH)) {
    
 }
 
-var_dump($idHobbiesArray);
+echo $idHobbiesArray[0]."<br>";
+echo $idHobbiesArray[1]."<br>";
+echo $idHobbiesArray[2]."<br>";
 
 //union interna de las tablas personas y hobbies
 //$sql_union_h = "SELECT * FROM personas as p INNER JOIN personas_hobbies as ph on (p.id=ph.id_personas) INNER JOIN hobbies as h on (ph.id_hobbies=h.id) WHERE dni='$intdni' AND apyn = '$apyn';"; 
@@ -191,30 +193,23 @@ if (!$row['dni']) {
                             <label for="hobbies">Hobbies</label><br>
                             <?php
                             //Cargar los hobbies desde la base de datos
-                            // $checked="";
-                            // $checked="checked";
 				            while ($rowH = mysqli_fetch_assoc($resultH)) {
 
-                                // ($rowH['id']=$tuplaH['id_hobbies']) ? $checked="checked" : $checked="";
-                                // if ($rowH['id']=$tuplaH['id_hobbies']) {
-                                    
-                                    // }
-                                    
                                 $checked="";
-                                # recorro el areglo de hobbies para ver si hay coincidencia con el hobbie actual
-                                foreach ($idHobbiesArray as $key => $value) {
+                                // ($rowH['id']=$tuplaH['id_hobbies']) ? $checked="checked" : $checked="";
+                                if (($rowH['id']==$idHobbiesArray[0])||($rowH['id']==$idHobbiesArray[1])||($rowH['id']==$idHobbiesArray[2])) {
 
-                                    if ($rowH['id']=$value) {
-                                        $checked="checked";    
-
-                                    }
+                                    $checked="checked";
+                                    
                                 }
+                                # recorro el areglo de hobbies para ver si hay coincidencia con el hobbie actual
 					            echo "<input type='checkbox' name='hobbies[]' value='$rowH[id]' $checked>",
 						        "<span class='chekLabel'>",
 						        ucfirst(strtolower($rowH['detalle'])),
                                 "</span>";
                                 //ucfirst = UpperCase first
-                            }   //strlower = String lowercase
+                                //strlower = String lowercase
+                            }         
 				            ?>
                         </div>
                         <div class="form-group col-md-6">
