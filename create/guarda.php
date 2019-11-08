@@ -183,6 +183,7 @@ if ($esCorrecto == false) {
     if (mysqli_affected_rows($connect) > 0) {
         $findFlag = false;
         $row = mysqli_fetch_assoc($res);
+       
         echo "Ya se encuentra un registro para: <br>",
             "dni: " . $row['dni'] . "<br>",
             "Sexo: ",
@@ -236,7 +237,8 @@ if ($esCorrecto == false) {
             }
             
         } else {
-            echo "Ocurrió un error, por favor, intentelo nuevamente <br>";
+            echo "Ocurrió un error, por favor, intentelo nuevamente <br>",
+            "<br><a href='../index.php'>Volver</a>";
         }
 
     }

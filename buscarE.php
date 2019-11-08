@@ -49,11 +49,11 @@ include("includes/headerForm.php");
             
         }
         
-        else if (dni.length < 8) {
+        else if (dni.length < 7) {
             Swal.fire({
                 type: 'error',
                 title: 'Oops...',
-                text: 'El DNI debe contener 8 dígitos y debe contener solo numeros',
+                text: 'El DNI debe contener 7 dígitos y debe contener solo numeros',
                 
             })
             return false;
